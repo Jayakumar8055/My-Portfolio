@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'my-portfolio-image'
-        DOCKER_TAG = 'alpine3.17'  // Specify the Alpine version tag
+        DOCKER_TAG = 'alpine3.17'
         CONTAINER_NAME = 'my-portfolio-container'
         PORT = '8080'
     }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container with the specified image and tag
-                    sh 'docker run -d -p ${PORT}:80 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:${DOCKER_TAG}'
+                    sh 'docker run -d -p ${PORT}:8080 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:${DOCKER_TAG}'
                 }
             }
         }
@@ -60,4 +60,3 @@ pipeline {
         }
     }
 }
-
