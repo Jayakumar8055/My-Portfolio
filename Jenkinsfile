@@ -8,13 +8,7 @@ pipeline {
         PORT = '8080'
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // Check out the source code from your version control system
-                checkout scm
-            }
-        }
+    
 
         stage('Build Docker Image') {
             steps {
